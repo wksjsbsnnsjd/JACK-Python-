@@ -79,16 +79,25 @@
             const responseDiv = document.getElementById("response");
             responseDiv.innerHTML = "جاري إرسال السؤال...";
 
-            const res = await fetch('/ask', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `question=${question}`
-            });
+            try {
+                const res = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `question=${question}`
+                });
 
-            const data = await res.json();
-            responseDiv.innerHTML = "<strong>إجابة الذكاء الاصطناعي:</strong> " + data.answer;
+                if (!res.ok) {
+                    throw new Error("Network response was not ok");
+                }
+
+                const data = await res.json();
+                responseDiv.innerHTML = "<strong>إجابة الذكاء الاصطناعي:</strong> " + data.answer;
+            } catch (error) {
+                responseDiv.innerHTML = "حدث خطأ في الاتصال بالخادم.";
+                console.error("Error fetching response:", error);
+            }
         });
     </script>
 </body>
