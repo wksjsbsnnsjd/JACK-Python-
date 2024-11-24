@@ -3,36 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع فك التشفير باستخدام Base64, Zlib, Marshal</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script> <!-- مكتبة pako لفك الضغط باستخدام Zlib -->
+    <title>تعلم بايثون</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>موقع فك التشفير باستخدام Base64, Zlib, Marshal</h1>
-    <textarea id="encodedText" rows="5" cols="50" placeholder="ضع النص المشفر هنا"></textarea><br><br>
-    <button onclick="decodeData()">فك التشفير</button>
-    <h3>النص المفكوك:</h3>
-    <textarea id="decodedText" rows="5" cols="50" readonly placeholder="النص المفكوك سيظهر هنا"></textarea>
+    <!-- الصفحة الرئيسية -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#history">التاريخ والنشأة</a></li>
+                <li><a href="#features">الميزات الرئيسية</a></li>
+                <li><a href="#basics">الأساسيات</a></li>
+                <li><a href="#applications">التطبيقات العملية</a></li>
+                <li><a href="#resources">الموارد التعليمية</a></li>
+                <li><a href="#best-practices">أفضل الممارسات</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script>
-        function decodeData() {
-            var encoded = document.getElementById("encodedText").value;
-            
-            try {
-                // فك تشفير Base64
-                var decodedBase64 = atob(encoded);
-                
-                // تحويل النص المفكوك إلى مصفوفة بايتات
-                var byteArray = new Uint8Array(decodedBase64.split('').map(function(c) { return c.charCodeAt(0); }));
+    <!-- الصفحة الرئيسية -->
+    <section id="home">
+        <h1>مرحبًا بك في تعلم بايثون!</h1>
+        <p>لغة بايثون هي واحدة من أسهل لغات البرمجة وأكثرها استخدامًا. تعلم البرمجة باستخدام بايثون الآن!</p>
+    </section>
 
-                // فك الضغط باستخدام Zlib (مكتبة pako)
-                var decompressedData = pako.inflate(byteArray, { to: 'string' });
+    <!-- تاريخ بايثون -->
+    <section id="history">
+        <h2>التاريخ والنشأة</h2>
+        <p>تم اختراع بايثون في أواخر الثمانينات بواسطة Guido van Rossum...</p>
+    </section>
 
-                // هنا نحتاج إلى إرسال البيانات المفكوكة إلى الخادم للمعالجة باستخدام Marshal
-                document.getElementById("decodedText").value = decompressedData;
-            } catch (e) {
-                alert("خطأ في فك التشفير أو فك الضغط. تأكد من صحة النص المدخل.");
-            }
-        }
-    </script>
+    <!-- ميزات بايثون -->
+    <section id="features">
+        <h2>الميزات الرئيسية</h2>
+        <ul>
+            <li>سهل التعلم والاستخدام</li>
+            <li>دعم المكتبات المختلفة</li>
+            <li>قوي في تطوير الويب وتحليل البيانات</li>
+        </ul>
+    </section>
+
+    <!-- الأساسيات -->
+    <section id="basics">
+        <h2>الأساسيات</h2>
+        <p>ستتعلم هنا الأساسيات مثل المتغيرات، الدوال، الجمل الشرطية، والحلقات.</p>
+    </section>
+
+    <!-- التطبيقات العملية -->
+    <section id="applications">
+        <h2>التطبيقات العملية</h2>
+        <p>من تطوير المواقع إلى الذكاء الاصطناعي، يمكنك تطبيق بايثون في العديد من المجالات!</p>
+    </section>
+
+    <!-- الموارد التعليمية -->
+    <section id="resources">
+        <h2>الموارد التعليمية</h2>
+        <p>اكتشف أفضل الدورات والكتب والمجتمعات لتعلم بايثون.</p>
+    </section>
+
+    <!-- أفضل الممارسات -->
+    <section id="best-practices">
+        <h2>أفضل الممارسات</h2>
+        <p>تعلم كيفية كتابة كود بايثون نظيف ومنظم!</p>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section id="faq">
+        <h2>الأسئلة الشائعة</h2>
+        <p>إجابات على أكثر الأسئلة شيوعًا حول تعلم بايثون.</p>
+    </section>
+
+    <!-- اتصل بنا -->
+    <section id="contact">
+        <h2>اتصل بنا</h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">الرسالة:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 تعلم بايثون</p>
+    </footer>
 </body>
 </html>
