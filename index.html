@@ -3,173 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع الفيديوهات - خلفية متحركة وفيديو 4K</title>
-    <style>
-        /* الأسلوب العام */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #000;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* الخلفية المتحركة */
-        .background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            animation: backgroundAnimation 15s infinite linear;
-        }
-
-        /* تأثير حركة الخلفية */
-        @keyframes backgroundAnimation {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(50%); }
-            100% { transform: translateX(0); }
-        }
-
-        /* إضافة الضوء الأصفر المتنقل */
-        @keyframes lightEffect {
-            0% { box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.5); }
-            50% { box-shadow: 0 0 25px 15px rgba(255, 255, 0, 0.7); }
-            100% { box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.5); }
-        }
-
-        .image-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            animation: backgroundAnimation 15s infinite linear;
-            animation: lightEffect 4s infinite ease-in-out;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* العنوان */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 4rem;
-            color: #fff;
-            font-weight: bold;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
-            transform: rotateY(180deg); /* تغيير اتجاه النص */
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #4CAF50;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-            transform: rotateY(180deg); /* تغيير اتجاه النص */
-        }
-
-        /* تصميم الفيديو */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
-            transition: all 0.3s ease;
-        }
-
-        .video-box {
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            max-width: 1600px;
-            width: 100%;
-            text-align: center;
-            transition: transform 0.3s ease;
-            transform: rotateY(180deg); /* تغيير اتجاه الفيديو */
-        }
-
-        .video-box:hover {
-            transform: scale(1.1) rotateY(0deg);
-        }
-
-        .video-box iframe {
-            width: 100%;
-            height: 850px;
-            border: none;
-        }
-
-        .video-box .title {
-            padding: 15px;
-            font-size: 1.2rem;
-            background-color: #4CAF50;
-            color: #fff;
-            border-bottom: 3px solid #fff;
-        }
-
-        /* النص السفلي */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1rem;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .footer a {
-            text-decoration: none;
-            color: #4CAF50;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-    </style>
+    <title>موقع فك التشفير باستخدام Base64, Zlib, Marshal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script> <!-- مكتبة pako لفك الضغط باستخدام Zlib -->
 </head>
 <body>
+    <h1>موقع فك التشفير باستخدام Base64, Zlib, Marshal</h1>
+    <textarea id="encodedText" rows="5" cols="50" placeholder="ضع النص المشفر هنا"></textarea><br><br>
+    <button onclick="decodeData()">فك التشفير</button>
+    <h3>النص المفكوك:</h3>
+    <textarea id="decodedText" rows="5" cols="50" readonly placeholder="النص المفكوك سيظهر هنا"></textarea>
 
-    <!-- إضافة الصورة كخلفية -->
-    <div class="image-container">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKsDs767Nd2Ljh_IFiesQ4yfTmNlWQKm6jrIYXt7vfN68I1ziQNWB6_MI&s" alt="صورة انمي متحركة">
-    </div>
+    <script>
+        function decodeData() {
+            var encoded = document.getElementById("encodedText").value;
+            
+            try {
+                // فك تشفير Base64
+                var decodedBase64 = atob(encoded);
+                
+                // تحويل النص المفكوك إلى مصفوفة بايتات
+                var byteArray = new Uint8Array(decodedBase64.split('').map(function(c) { return c.charCodeAt(0); }));
 
-    <div class="header">
-        <h1>مرحبا بك في موقع الفيديوهات المتميز</h1>
-        <h2>من تصميم programmer JACK</h2>
-    </div>
+                // فك الضغط باستخدام Zlib (مكتبة pako)
+                var decompressedData = pako.inflate(byteArray, { to: 'string' });
 
-    <!-- فيديو YouTube -->
-    <div class="video-container">
-        <div class="video-box">
-            <div class="title">فيديو من YouTube عالي الجودة 4K</div>
-            <!-- تضمين الفيديو -->
-            <iframe src="https://www.youtube.com/embed/wWTMH8nnx3w?autoplay=1&mute=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>جميع الحقوق محفوظة ل <a href="https://t.me/O_O_P_V" target="_blank">programmer JACK</a> - 2024</p>
-    </div>
-
+                // هنا نحتاج إلى إرسال البيانات المفكوكة إلى الخادم للمعالجة باستخدام Marshal
+                document.getElementById("decodedText").value = decompressedData;
+            } catch (e) {
+                alert("خطأ في فك التشفير أو فك الضغط. تأكد من صحة النص المدخل.");
+            }
+        }
+    </script>
 </body>
 </html>
