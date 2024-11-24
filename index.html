@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع الفيديوهات - صاحب البوت @O_O_P_V</title>
     <style>
+        /* إعدادات الخلفية المتحركة */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -16,14 +17,23 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-image: url('https://www.w3schools.com/w3images/nature.jpg');
+            background-image: url('https://path/to/your/anime_background.gif'); /* هنا يتم وضع رابط GIF الخلفية المتحركة */
             background-size: cover;
             background-position: center;
+            animation: backgroundAnimation 20s infinite linear; /* حركية الخلفية */
+        }
+
+        /* حركة الخلفية */
+        @keyframes backgroundAnimation {
+            0% { background-position: 0 0; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0 0; }
         }
 
         .header {
             text-align: center;
             margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out; /* تأثير الظهور */
         }
 
         h1 {
@@ -39,6 +49,27 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
         }
 
+        /* صور أنمي متحركة في الواجهة */
+        .anime-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .anime-images img {
+            width: 200px;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .anime-images img:hover {
+            transform: scale(1.1); /* تأثير التكبير عند المرور */
+        }
+
+        /* الفيديوهات */
         .video-container {
             display: flex;
             justify-content: center;
@@ -56,6 +87,11 @@
             max-width: 600px;
             width: 100%;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .video-box:hover {
+            transform: scale(1.05); /* تأثير التكبير عند المرور */
         }
 
         .video-box iframe {
@@ -89,6 +125,12 @@
             text-decoration: underline;
         }
 
+        /* الأنيميشن لظهور النص */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         .content-wrapper {
             max-width: 1200px;
             width: 100%;
@@ -109,15 +151,31 @@
             <h2>من تصميم صاحب البوت @O_O_P_V</h2>
         </div>
 
+        <!-- عرض صور الأنمي المتحركة -->
+        <div class="anime-images">
+            <img src="https://path/to/your/anime_image1.gif" alt="Anime Image 1">
+            <img src="https://path/to/your/anime_image2.gif" alt="Anime Image 2">
+            <img src="https://path/to/your/anime_image3.gif" alt="Anime Image 3">
+        </div>
+
+        <!-- الفيديوهات -->
         <div class="video-container">
+            <!-- فيديو يوتيوب -->
             <div class="video-box">
                 <div class="title">فيديو تعليمي - دورة بايثون</div>
                 <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?rel=0&autoplay=1" allowfullscreen></iframe>
             </div>
 
+            <!-- فيديو تليجرام -->
             <div class="video-box">
-                <div class="title">فيديو عن بوت تلجرام</div>
-                <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?rel=0&autoplay=1" allowfullscreen></iframe>
+                <div class="title">فيديو من تليجرام</div>
+                <!-- رابط الفيديو من تليجرام -->
+                <p>لمشاهدة الفيديو، اضغط على الرابط أدناه:</p>
+                <a href="https://t.me/HTaamm/7146" target="_blank">
+                    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        مشاهدة الفيديو
+                    </button>
+                </a>
             </div>
         </div>
 
