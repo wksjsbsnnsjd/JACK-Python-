@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورة بايثون - YouTube API</title>
+    <title>دورة بايثون - من قناة YouTube</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         .container { margin: 20px; padding: 20px; }
@@ -19,41 +19,17 @@
         <h1>دورة بايثون - من قناة YouTube</h1>
         <div class="video-container" id="video-list">
             <!-- الفيديوهات ستظهر هنا -->
+            <!-- إضافة فيديوهات مباشرة (بدون API) -->
+            <div class="video">
+                <div class="title">دورة بايثون - الحلقة 1</div>
+                <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <div class="title">دورة بايثون - الحلقة 2</div>
+                <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <!-- أضف المزيد من الفيديوهات هنا -->
         </div>
     </div>
-
-    <script>
-        // YouTube API Key
-        const API_KEY = 'AIzaSyDuXwtxgtlxRQHTtSUBZAJf9cdP52Xt3U4'; // مفتاح API الذي قمت بتوفيره
-        const playlistId = 'PLSiLeKadTQ7nS3KfPQR8nXakO6Ju7eq1L'; // استبدل برابط قائمة التشغيل
-        const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}`;
-
-        // جلب الفيديوهات من API
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const videos = data.items;
-                const videoListContainer = document.getElementById('video-list');
-                if (videos.length === 0) {
-                    videoListContainer.innerHTML = '<p>لا توجد فيديوهات في القائمة.</p>';
-                }
-                videos.forEach(video => {
-                    const title = video.snippet.title;
-                    const videoId = video.snippet.resourceId.videoId;
-                    const videoElement = `
-                        <div class="video">
-                            <div class="title">${title}</div>
-                            <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    `;
-                    videoListContainer.innerHTML += videoElement;
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching YouTube API:', error);
-                const videoListContainer = document.getElementById('video-list');
-                videoListContainer.innerHTML = '<p>حدث خطأ أثناء تحميل الفيديوهات. يرجى المحاولة لاحقًا.</p>';
-            });
-    </script>
 </body>
 </html>
