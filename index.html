@@ -3,121 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم Python على جهازك</title>
+    <title>دورة بايثون - قناتك المفضلة</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #4caf50;
-            color: white;
-            padding: 20px;
-            text-align: center;
         }
         .container {
             margin: 20px;
-            max-width: 800px;
-            margin: 20px auto;
+            padding: 20px;
         }
-        .course {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .course h2 {
-            margin: 0 0 10px;
-        }
-        .course button {
-            background: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .course button:hover {
-            background: #45a049;
+        h1 {
+            text-align: center;
+            color: #4CAF50;
         }
         .video-container {
-            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
-        video {
+        .video {
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        iframe {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            height: 315px;
+        }
+        .title {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>تعلم Python - تشغيل الفيديوهات من جهازك</h1>
-    </header>
     <div class="container">
-        <!-- كورسات -->
-        <div class="course">
-            <h2>أساسيات Python</h2>
-            <button onclick="loadVideos('basics')">عرض الفيديوهات</button>
-        </div>
-        <div class="course">
-            <h2>Python المتوسط</h2>
-            <button onclick="loadVideos('intermediate')">عرض الفيديوهات</button>
-        </div>
-        <div class="course">
-            <h2>Python المتقدم</h2>
-            <button onclick="loadVideos('advanced')">عرض الفيديوهات</button>
-        </div>
-
-        <!-- قائمة الفيديوهات -->
-        <div class="video-container" id="video-container">
-            <h3>الفيديوهات:</h3>
-            <div id="video-list"></div>
+        <h1>دورة بايثون من قناة YouTube</h1>
+        <div class="video-container">
+            <!-- أول فيديو -->
+            <div class="video">
+                <div class="title">مقدمة في بايثون</div>
+                <iframe src="https://www.youtube.com/embed/HRYCVBVxli0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <!-- ثاني فيديو -->
+            <div class="video">
+                <div class="title">أساسيات بايثون - الجزء 1</div>
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <!-- ثالث فيديو -->
+            <div class="video">
+                <div class="title">أساسيات بايثون - الجزء 2</div>
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_3" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <!-- يمكنك إضافة المزيد من الفيديوهات بنفس الشكل -->
         </div>
     </div>
-
-    <script>
-        // قوائم الفيديوهات (المحفوظة على الجهاز)
-        const videos = {
-            basics: [
-                { title: 'مقدمة إلى Python', src: 'videos/basics_intro.mp4' },
-                { title: 'المتغيرات والجمل الشرطية', src: 'videos/basics_variables.mp4' }
-            ],
-            intermediate: [
-                { title: 'البرمجة الكائنية (OOP)', src: 'videos/intermediate_oop.mp4' },
-                { title: 'إدارة الأخطاء', src: 'videos/intermediate_errors.mp4' }
-            ],
-            advanced: [
-                { title: 'تحليل البيانات باستخدام Pandas', src: 'videos/advanced_pandas.mp4' },
-                { title: 'الذكاء الاصطناعي باستخدام Python', src: 'videos/advanced_ai.mp4' }
-            ]
-        };
-
-        // تحميل الفيديوهات حسب الكورس
-        function loadVideos(course) {
-            const videoContainer = document.getElementById('video-list');
-            videoContainer.innerHTML = ''; // تفريغ القائمة السابقة
-
-            if (videos[course]) {
-                videos[course].forEach(video => {
-                    const videoElement = document.createElement('div');
-                    videoElement.innerHTML = `
-                        <h4>${video.title}</h4>
-                        <video controls>
-                            <source src="${video.src}" type="video/mp4">
-                            متصفحك لا يدعم تشغيل الفيديو.
-                        </video>
-                    `;
-                    videoContainer.appendChild(videoElement);
-                });
-            } else {
-                videoContainer.innerHTML = '<p>لا توجد فيديوهات متوفرة لهذا الكورس.</p>';
-            }
-        }
-    </script>
 </body>
 </html>
