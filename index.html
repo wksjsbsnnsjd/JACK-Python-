@@ -10,7 +10,8 @@
         h1 { text-align: center; color: #4CAF50; }
         .file-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
         .file { margin: 10px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
-        .file a { text-decoration: none; color: #4CAF50; font-weight: bold; display: block; text-align: center; }
+        .file input[type="file"] { display: none; }
+        .file label { text-decoration: none; color: #4CAF50; font-weight: bold; cursor: pointer; display: block; text-align: center; padding: 10px; background-color: #f0f0f0; border-radius: 5px; }
         .file p { text-align: center; color: #333; }
     </style>
 </head>
@@ -18,21 +19,17 @@
     <div class="container">
         <h1>رفع ملفات بايثون وبوتات تلجرام</h1>
         <div class="file-container">
-            <!-- روابط التحميل -->
+            <!-- رفع ملف بايثون -->
             <div class="file">
-                <a href="files/my-python-script.py" download>
-                    <p>تحميل ملف بايثون</p>
-                </a>
+                <label for="pythonFile">اختار ملف بايثون</label>
+                <input type="file" id="pythonFile" accept=".py"/>
+                <p>اختار ملف بايثون من جهازك.</p>
             </div>
+            <!-- رفع بوت تلجرام -->
             <div class="file">
-                <a href="files/my-telegram-bot.py" download>
-                    <p>تحميل بوت تلجرام</p>
-                </a>
-            </div>
-            <div class="file">
-                <a href="files/my-telegram-bot.zip" download>
-                    <p>تحميل بوت تلجرام (ملف مضغوط)</p>
-                </a>
+                <label for="telegramBot">اختار بوت تلجرام</label>
+                <input type="file" id="telegramBot" accept=".py"/>
+                <p>اختار بوت تلجرام من جهازك.</p>
             </div>
             <!-- يمكنك إضافة المزيد من الملفات هنا -->
         </div>
