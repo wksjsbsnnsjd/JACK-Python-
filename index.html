@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورة بايثون - من قناة YouTube</title>
+    <title>رفع ملفات بايثون وبوتات تلجرام</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         .container { margin: 20px; padding: 20px; }
         h1 { text-align: center; color: #4CAF50; }
-        .video-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
-        .video { margin: 10px; background-color: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
-        iframe { width: 100%; height: 315px; }
-        .title { padding: 10px; background-color: #4CAF50; color: white; text-align: center; }
+        .file-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .file { margin: 10px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+        .file a { text-decoration: none; color: #4CAF50; font-weight: bold; display: block; text-align: center; }
+        .file p { text-align: center; color: #333; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>دورة بايثون - من قناة YouTube</h1>
-        <div class="video-container" id="video-list">
-            <!-- الفيديوهات ستظهر هنا -->
-            <!-- إضافة فيديوهات مباشرة (بدون API) -->
-            <div class="video">
-                <div class="title">دورة بايثون - الحلقة 1</div>
-                <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        <h1>رفع ملفات بايثون وبوتات تلجرام</h1>
+        <div class="file-container">
+            <!-- روابط التحميل -->
+            <div class="file">
+                <a href="files/my-python-script.py" download>
+                    <p>تحميل ملف بايثون</p>
+                </a>
             </div>
-            <div class="video">
-                <div class="title">دورة بايثون - الحلقة 2</div>
-                <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            <div class="file">
+                <a href="files/my-telegram-bot.py" download>
+                    <p>تحميل بوت تلجرام</p>
+                </a>
             </div>
-            <!-- أضف المزيد من الفيديوهات هنا -->
+            <div class="file">
+                <a href="files/my-telegram-bot.zip" download>
+                    <p>تحميل بوت تلجرام (ملف مضغوط)</p>
+                </a>
+            </div>
+            <!-- يمكنك إضافة المزيد من الملفات هنا -->
         </div>
     </div>
 </body>
