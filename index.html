@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع الفيديوهات - صاحب البوت @O_O_P_V</title>
+    <title>موقع الفيديوهات - programmer JACK</title>
     <style>
-        /* إعدادات الخلفية المتحركة */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -17,13 +16,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-image: url('https://media.giphy.com/media/duHh7NK8Xy44k/giphy.gif'); /* هنا يتم وضع رابط GIF الخلفية المتحركة */
+            background-image: url('https://media.giphy.com/media/duHh7NK8Xy44k/giphy.gif'); /* الخلفية المتحركة */
             background-size: cover;
             background-position: center;
-            animation: backgroundAnimation 20s infinite linear; /* حركية الخلفية */
+            animation: backgroundAnimation 20s infinite linear;
         }
 
-        /* حركة الخلفية */
         @keyframes backgroundAnimation {
             0% { background-position: 0 0; }
             50% { background-position: 100% 100%; }
@@ -33,7 +31,6 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            animation: fadeIn 2s ease-in-out; /* تأثير الظهور */
         }
 
         h1 {
@@ -49,7 +46,6 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
         }
 
-        /* صور أنمي متحركة في الواجهة */
         .anime-images {
             display: flex;
             justify-content: center;
@@ -66,10 +62,9 @@
         }
 
         .anime-images img:hover {
-            transform: scale(1.1); /* تأثير التكبير عند المرور */
+            transform: scale(1.1);
         }
 
-        /* الفيديوهات */
         .video-container {
             display: flex;
             justify-content: center;
@@ -91,7 +86,7 @@
         }
 
         .video-box:hover {
-            transform: scale(1.05); /* تأثير التكبير عند المرور */
+            transform: scale(1.05);
         }
 
         .video-box iframe {
@@ -125,12 +120,6 @@
             text-decoration: underline;
         }
 
-        /* الأنيميشن لظهور النص */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
         .content-wrapper {
             max-width: 1200px;
             width: 100%;
@@ -158,6 +147,25 @@
             border: none;
         }
 
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #45a049;
+        }
+
     </style>
 </head>
 <body>
@@ -165,7 +173,7 @@
     <div class="content-wrapper">
         <div class="header">
             <h1>مرحبا بك في موقع الفيديوهات المتميز</h1>
-            <h2>من تصميم صاحب البوت @O_O_P_V</h2>
+            <h2>من تصميم programmer JACK</h2>
         </div>
 
         <!-- عرض صور الأنمي المتحركة -->
@@ -178,16 +186,21 @@
         <div class="video-container">
             <!-- فيديو من تليجرام -->
             <div class="video-box">
-                <div class="title">فيديو أنمي مع جودة 4K</div>
+                <div class="title">فيديو أنمي عالي الجودة 4K</div>
                 <div class="telegram-video">
-                    <!-- الفيديو من تليجرام يتم تضمينه مباشرة -->
+                    <!-- إضافة رابط الفيديو من تليجرام -->
                     <iframe src="https://t.me/HTaamm/7146" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
 
+        <!-- زر لتحميل الفيديو -->
+        <div class="button-container">
+            <a href="https://t.me/HTaamm/7146" target="_blank">شاهد الفيديو على تليجرام</a>
+        </div>
+
         <div class="footer">
-            <p>جميع الحقوق محفوظة ل <a href="https://t.me/O_O_P_V" target="_blank">@O_O_P_V</a> - 2024</p>
+            <p>جميع الحقوق محفوظة ل <a href="https://t.me/O_O_P_V" target="_blank">programmer JACK</a> - 2024</p>
         </div>
     </div>
 
