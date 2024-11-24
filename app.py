@@ -9,16 +9,21 @@ openai.api_key = "sk-proj-mtJ7Fb4Yl6jUIrJiNqrjB6UJ2_iouwsdlVX74FSBQp1ooLmp4plv2B
 @app.route('/ask', methods=['POST'])
 def ask():
     question = request.form['question']
+    print(f"Received question: {question}")  # سجل السؤال الوارد
     
-    # استخدام GPT-4 للإجابة على السؤال
-    response = openai.Completion.create(
-        model="gpt-4",  # يمكنك اختيار النموذج الذي تريد استخدامه
-        prompt=question,
-        max_tokens=150
-    )
-    
-    answer = response.choices[0].text.strip()
-    return jsonify({'answer': answer})
+    try:
+        # استخدام GPT-4 للإجابة على السؤال
+        response = openai.Completion.create(
+            model="gpt-4",  # يمكنك اختيار النموذج الذي تريد استخدامه
+            prompt=question,
+            max_tokens=150
+        )
+        answer = response.choices[0].text.strip()
+        print(f"AI Answer: {answer}")  # سجل الإجابة
+        return jsonify({'answer': answer})
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({'answer': "حدث خطأ أثناء معالجة السؤال."})
 
 if __name__ == '__main__':
     app.run(debug=True)
