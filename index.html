@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -5,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تواصل معي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #ff6f61, #d32f2f);
+            background: #ff6f61;
             color: white;
             height: 100vh;
             display: flex;
@@ -55,12 +57,39 @@
 <body>
     <div class="container">
         <h1>تواصل معي عبر البريد الإلكتروني</h1>
-        <form action="mailto:gsksvsksksj@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" class="form-input" placeholder="اسمك" required><br>
-            <input type="email" name="email" class="form-input" placeholder="البريد الإلكتروني" required><br>
-            <textarea name="message" class="form-input" rows="4" placeholder="رسالتك" required></textarea><br>
+        <form id="contact-form">
+            <input type="text" id="name" class="form-input" placeholder="اسمك" required><br>
+            <input type="email" id="email" class="form-input" placeholder="البريد الإلكتروني" required><br>
+            <textarea id="message" class="form-input" rows="4" placeholder="رسالتك" required></textarea><br>
             <button type="submit" class="btn-submit">أرسل الرسالة</button>
         </form>
     </div>
+
+    <script>
+        (function(){
+            emailjs.init("your_user_id");  // استبدل بـ User ID الخاص بك من EmailJS
+
+            document.getElementById('contact-form').addEventListener('submit', function(event){
+                event.preventDefault();
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+
+                var templateParams = {
+                    user_name: name,
+                    user_email: email,
+                    message: message
+                };
+
+                emailjs.send('your_service_id', 'your_template_id', templateParams)
+                    .then(function(response) {
+                        alert('تم إرسال رسالتك بنجاح!');
+                    }, function(error) {
+                        alert('فشل في إرسال الرسالة، حاول مرة أخرى.');
+                    });
+            });
+        })();
+    </script>
 </body>
 </html>
