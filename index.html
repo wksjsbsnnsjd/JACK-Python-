@@ -3,84 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورة تعلم بايثون</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>تواصل معي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff6f61, #d32f2f);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .form-input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-submit {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #d32f2f;
+        }
+    </style>
 </head>
 <body>
-    <!-- الصفحة الرئيسية -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#courses">الدورة</a></li>
-                <li><a href="#resources">الموارد التعليمية</a></li>
-                <li><a href="#best-practices">أفضل الممارسات</a></li>
-                <li><a href="#faq">الأسئلة الشائعة</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- الصفحة الرئيسية -->
-    <section id="home" class="hero">
-        <div class="content">
-            <h1>تعلم بايثون من البداية إلى الاحتراف</h1>
-            <p>انضم إلينا في هذه الدورة الاحترافية لتعلم بايثون من خلال دروس منظمة مع أمثلة عملية!</p>
-            <a href="#courses" class="btn">ابدأ الدورة الآن</a>
-        </div>
-    </section>
-
-    <!-- الدورة -->
-    <section id="courses">
-        <h2>الدورة</h2>
-        <div class="course-list">
-            <div class="course-item">
-                <h3>الدرس الأول: مقدمة عن بايثون</h3>
-                <p>ستتعلم في هذا الدرس كيف تبدأ باستخدام بايثون وتثبيت بيئة العمل المناسبة.</p>
-            </div>
-            <div class="course-item">
-                <h3>الدرس الثاني: أساسيات بايثون</h3>
-                <p>تعلم المتغيرات، الأنواع الأساسية، والعمليات الحسابية.</p>
-            </div>
-            <div class="course-item">
-                <h3>الدرس الثالث: الحلقات والجمل الشرطية</h3>
-                <p>كيفية استخدام الحلقات والدوال الشرطية للتحكم في تدفق البرنامج.</p>
-            </div>
-            <div class="course-item">
-                <h3>الدرس الرابع: البرمجة الشيئية</h3>
-                <p>اكتشف كيفية استخدام البرمجة الشيئية لإنشاء برامج أكثر تنظيماً.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- أفضل الممارسات -->
-    <section id="best-practices">
-        <h2>أفضل الممارسات</h2>
-        <p>تعلم كيفية كتابة أكواد نظيفة وفعالة باستخدام بايثون.</p>
-    </section>
-
-    <!-- الأسئلة الشائعة -->
-    <section id="faq">
-        <h2>الأسئلة الشائعة</h2>
-        <p>إجابات على الأسئلة الشائعة حول بايثون والدورة التدريبية.</p>
-    </section>
-
-    <!-- اتصل بنا -->
-    <section id="contact">
-        <h2>اتصل بنا</h2>
-        <form action="#">
-            <label for="name">الاسم:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" name="email" required>
-            <textarea name="message" id="message" placeholder="اكتب رسالتك هنا" required></textarea>
-            <button type="submit" class="btn">إرسال</button>
+    <div class="container">
+        <h1>تواصل معي عبر البريد الإلكتروني</h1>
+        <form action="mailto:gsksvsksksj@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" class="form-input" placeholder="اسمك" required><br>
+            <input type="email" name="email" class="form-input" placeholder="البريد الإلكتروني" required><br>
+            <textarea name="message" class="form-input" rows="4" placeholder="رسالتك" required></textarea><br>
+            <button type="submit" class="btn-submit">أرسل الرسالة</button>
         </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 دورة تعلم بايثون - جميع الحقوق محفوظة</p>
-    </footer>
+    </div>
 </body>
 </html>
