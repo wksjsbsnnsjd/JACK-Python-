@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم بايثون</title>
+    <title>دورة تعلم بايثون</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- الصفحة الرئيسية -->
@@ -12,10 +13,7 @@
         <nav>
             <ul>
                 <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#history">التاريخ والنشأة</a></li>
-                <li><a href="#features">الميزات الرئيسية</a></li>
-                <li><a href="#basics">الأساسيات</a></li>
-                <li><a href="#applications">التطبيقات العملية</a></li>
+                <li><a href="#courses">الدورة</a></li>
                 <li><a href="#resources">الموارد التعليمية</a></li>
                 <li><a href="#best-practices">أفضل الممارسات</a></li>
                 <li><a href="#faq">الأسئلة الشائعة</a></li>
@@ -25,73 +23,64 @@
     </header>
 
     <!-- الصفحة الرئيسية -->
-    <section id="home">
-        <h1>مرحبًا بك في تعلم بايثون!</h1>
-        <p>لغة بايثون هي واحدة من أسهل لغات البرمجة وأكثرها استخدامًا. تعلم البرمجة باستخدام بايثون الآن!</p>
+    <section id="home" class="hero">
+        <div class="content">
+            <h1>تعلم بايثون من البداية إلى الاحتراف</h1>
+            <p>انضم إلينا في هذه الدورة الاحترافية لتعلم بايثون من خلال دروس منظمة مع أمثلة عملية!</p>
+            <a href="#courses" class="btn">ابدأ الدورة الآن</a>
+        </div>
     </section>
 
-    <!-- تاريخ بايثون -->
-    <section id="history">
-        <h2>التاريخ والنشأة</h2>
-        <p>تم اختراع بايثون في أواخر الثمانينات بواسطة Guido van Rossum...</p>
-    </section>
-
-    <!-- ميزات بايثون -->
-    <section id="features">
-        <h2>الميزات الرئيسية</h2>
-        <ul>
-            <li>سهل التعلم والاستخدام</li>
-            <li>دعم المكتبات المختلفة</li>
-            <li>قوي في تطوير الويب وتحليل البيانات</li>
-        </ul>
-    </section>
-
-    <!-- الأساسيات -->
-    <section id="basics">
-        <h2>الأساسيات</h2>
-        <p>ستتعلم هنا الأساسيات مثل المتغيرات، الدوال، الجمل الشرطية، والحلقات.</p>
-    </section>
-
-    <!-- التطبيقات العملية -->
-    <section id="applications">
-        <h2>التطبيقات العملية</h2>
-        <p>من تطوير المواقع إلى الذكاء الاصطناعي، يمكنك تطبيق بايثون في العديد من المجالات!</p>
-    </section>
-
-    <!-- الموارد التعليمية -->
-    <section id="resources">
-        <h2>الموارد التعليمية</h2>
-        <p>اكتشف أفضل الدورات والكتب والمجتمعات لتعلم بايثون.</p>
+    <!-- الدورة -->
+    <section id="courses">
+        <h2>الدورة</h2>
+        <div class="course-list">
+            <div class="course-item">
+                <h3>الدرس الأول: مقدمة عن بايثون</h3>
+                <p>ستتعلم في هذا الدرس كيف تبدأ باستخدام بايثون وتثبيت بيئة العمل المناسبة.</p>
+            </div>
+            <div class="course-item">
+                <h3>الدرس الثاني: أساسيات بايثون</h3>
+                <p>تعلم المتغيرات، الأنواع الأساسية، والعمليات الحسابية.</p>
+            </div>
+            <div class="course-item">
+                <h3>الدرس الثالث: الحلقات والجمل الشرطية</h3>
+                <p>كيفية استخدام الحلقات والدوال الشرطية للتحكم في تدفق البرنامج.</p>
+            </div>
+            <div class="course-item">
+                <h3>الدرس الرابع: البرمجة الشيئية</h3>
+                <p>اكتشف كيفية استخدام البرمجة الشيئية لإنشاء برامج أكثر تنظيماً.</p>
+            </div>
+        </div>
     </section>
 
     <!-- أفضل الممارسات -->
     <section id="best-practices">
         <h2>أفضل الممارسات</h2>
-        <p>تعلم كيفية كتابة كود بايثون نظيف ومنظم!</p>
+        <p>تعلم كيفية كتابة أكواد نظيفة وفعالة باستخدام بايثون.</p>
     </section>
 
     <!-- الأسئلة الشائعة -->
     <section id="faq">
         <h2>الأسئلة الشائعة</h2>
-        <p>إجابات على أكثر الأسئلة شيوعًا حول تعلم بايثون.</p>
+        <p>إجابات على الأسئلة الشائعة حول بايثون والدورة التدريبية.</p>
     </section>
 
     <!-- اتصل بنا -->
     <section id="contact">
         <h2>اتصل بنا</h2>
-        <form action="submit_form.php" method="post">
+        <form action="#">
             <label for="name">الاسم:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
             <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">الرسالة:</label>
-            <textarea id="message" name="message"></textarea>
-            <button type="submit">إرسال</button>
+            <input type="email" id="email" name="email" required>
+            <textarea name="message" id="message" placeholder="اكتب رسالتك هنا" required></textarea>
+            <button type="submit" class="btn">إرسال</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 تعلم بايثون</p>
+        <p>&copy; 2024 دورة تعلم بايثون - جميع الحقوق محفوظة</p>
     </footer>
 </body>
 </html>
