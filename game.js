@@ -1,3 +1,6 @@
+const startScreen = document.getElementById('start-screen');
+const startButton = document.getElementById('start-btn');
+const gameScreen = document.getElementById('game-screen');
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -134,7 +137,7 @@ function gameLoop() {
     checkWin();
 
     // عرض النقاط والمستوى
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'white';
     ctx.font = '20px Arial';
     ctx.fillText(`Score: ${score}`, 10, 20);
     ctx.fillText(`Level: ${level}`, 10, 50);
@@ -142,9 +145,11 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-// تشغيل الموسيقى
-backgroundMusic.loop = true;
-backgroundMusic.play();
-
 // بدء اللعبة
-gameLoop();
+startButton.addEventListener('click', () => {
+    startScreen.style.display = 'none';
+    gameScreen.style.display = 'block';
+    backgroundMusic.loop = true;
+    backgroundMusic.play();
+    gameLoop();
+});
