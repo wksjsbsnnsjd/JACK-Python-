@@ -1,0 +1,13 @@
+HeroGameProject/
+├── static/       # يحتوي على الموارد مثل الصور، ملفات CSS، JavaScript والموسيقى
+│   ├── style.css      # ملف تنسيق CSS
+│   ├── game.js        # ملف اللعبة بالجاڤا سكريبت
+│   ├── player.png     # صورة اللاعب
+│   ├── coin.png       # صورة العملات
+│   ├── background.jpg # صورة الخلفية
+│   ├── music.mp3      # موسيقى الخلفية
+│   ├── coin.mp3       # صوت جمع العملات
+│   └── win.mp3        # صوت الفوز
+├── templates/    # يحتوي على قوالب HTML
+│   └── index.html     # الصفحة الرئيسية
+└── app.py        # ملف Python الرئيسي لتشغيل الخادم
